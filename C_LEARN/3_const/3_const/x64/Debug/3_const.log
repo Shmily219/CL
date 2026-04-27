@@ -1,0 +1,11 @@
+﻿  源.cpp
+D:\C_LEARN\3_const\源.cpp(32,8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C_LEARN\3_const\源.cpp(34,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+      D:\C_LEARN\3_const\源.cpp(34,9):
+      请考虑在格式字符串中使用“%zd”
+  
+D:\C_LEARN\3_const\源.cpp(37,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+      D:\C_LEARN\3_const\源.cpp(37,9):
+      请考虑在格式字符串中使用“%zd”
+  
+  3_const.vcxproj -> D:\C_LEARN\3_const\x64\Debug\3_const.exe

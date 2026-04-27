@@ -1,0 +1,6 @@
+﻿  源.c
+D:\C_LEARN\Sort_Maopao\源.c(18,12): warning C4047: “=”:“int *”与“int”的间接级别不同
+D:\C_LEARN\Sort_Maopao\源.c(22,43): warning C4047: “=”:“int *”与“int”的间接级别不同
+D:\C_LEARN\Sort_Maopao\源.c(26,10): warning C4047: “=”:“int *”与“int”的间接级别不同
+D:\C_LEARN\Sort_Maopao\源.c(27,2): warning C4047: “return”:“int *”与“int *[1]”的间接级别不同
+D:\C_LEARN\Sort_Maopao\源.c(15,21): error C2075: "arr": 初始化需要带括号的初始化表达式列表
