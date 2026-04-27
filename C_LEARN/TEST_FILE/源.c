@@ -2,14 +2,45 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h> //io功能库
 
+//计算阶乘
+int Count_jiecheng(int i)
+{
+    //int m = 1;
+    //for (int j = i; j > 0;j--) {
+    //    m *= j;
+    //}
+    //return m;
+
+    if (i == 0)
+        return 1;
+    return i * Count_jiecheng(i - 1);
+};
+
+//计算斐波那契的第n项
+int FBNQ(int i) {
+    if (i == 1 || i == 2) {
+        return 1;
+    /*}*/
+    return FBNQ(i - 1) + FBNQ(i - 2);
+}
 
 int main(void)
 {
-    int i = 0;
-    do {
-        printf("%d\n",i+1);
-        i++;
-    } while (i<10);
+    //计算n的阶乘
+    printf("输入你准备计算阶乘的数\n");
+    int a = 0;
+    scanf("%d",&a);
+    printf("阶乘的结果为%d\n",Count_jiecheng(a));
+    
+    //计算斐波那契
+    //printf("输入你准备计算斐波那契的数\n");
+    //int b = 0;
+    //scanf("%d",&b);
+    //printf("斐波那契的第%d项是%d\n",b,FBNQ(b));
+
+
+
+
 
     //四数找最大
     //int a, b, c, d, e;
