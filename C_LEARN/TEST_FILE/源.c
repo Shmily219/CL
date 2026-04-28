@@ -14,18 +14,18 @@ int Count_jiecheng(int i)
     if (i == 0)
         return 1;
     return i * Count_jiecheng(i - 1);
-};
+ };
 
 //计算斐波那契的第n项
 int FBNQ(int i) {
     if (i == 1 || i == 2) {
         return 1;
-    /*}*/
-    return FBNQ(i - 1) + FBNQ(i - 2);
-}
+    }
+        return FBNQ(i - 1) + FBNQ(i - 2);
+    };
 
-int main(void)
-{
+    int main() {
+
     //计算n的阶乘
     printf("输入你准备计算阶乘的数\n");
     int a = 0;
@@ -37,10 +37,6 @@ int main(void)
     //int b = 0;
     //scanf("%d",&b);
     //printf("斐波那契的第%d项是%d\n",b,FBNQ(b));
-
-
-
-
 
     //四数找最大
     //int a, b, c, d, e;
