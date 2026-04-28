@@ -1,6 +1,7 @@
 ﻿//C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\VCProjectItems
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h> //io功能库
+#include <string.h>
 
 //计算阶乘
 int Count_jiecheng(int i)
@@ -26,12 +27,16 @@ int FBNQ(int i) {
 
     int main() {
 
+    printf("%d\n",5/2);
+    printf("%d\n",5/2 + 1);
+
     //计算n的阶乘
-    printf("输入你准备计算阶乘的数\n");
-    int a = 0;
-    scanf("%d",&a);
-    printf("阶乘的结果为%d\n",Count_jiecheng(a));
+    //printf("输入你准备计算阶乘的数\n");
+    //int a = 0;
+    //scanf("%d",&a);
+    //printf("阶乘的结果为%d\n",Count_jiecheng(a));
     
+
     //计算斐波那契
     //printf("输入你准备计算斐波那契的数\n");
     //int b = 0;
