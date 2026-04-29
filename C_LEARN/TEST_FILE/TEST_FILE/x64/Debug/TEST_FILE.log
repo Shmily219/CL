@@ -1,2 +1,3 @@
 ﻿  源.c
+D:\Code_Learn\C_LEARN\TEST_FILE\源.c(36,11): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   TEST_FILE.vcxproj -> D:\Code_Learn\C_LEARN\TEST_FILE\x64\Debug\TEST_FILE.exe
