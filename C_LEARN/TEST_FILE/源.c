@@ -42,12 +42,23 @@ int Create_random() {
 }
 
 int main() {
-    for (int i = 0; i < 5; i++) {
-        printf("%d\n", Create_random());
-        Sleep(1000);
-    }
+    //判断字符串是否相等
+    char arr1[] = "I got it!";
+    char arr2[20] = {0};
+    printf("输入文本\n");
+    scanf("%[^\n]",arr2); //%[^\n]可以读取输入的一整行字符串
+    //printf("%d\n",strcmp(arr1,arr2));
+    printf("arr1和arr2的匹配结果是%d\n",strcmp(arr1,arr2));
+    printf("arr1和语句的匹配结果是%d\n",strcmp(arr1, "I got it!"));
+    printf("arr2和语句的匹配结果是%d\n",strcmp(arr2, "I got it!"));
 
 
+
+    //生成随机数
+    //for (int i = 0; i < 5; i++) {
+    //    Sleep(1000);
+    //    printf("%d\n", Create_random());
+    //}
 
     ////字符串截取,
     //char arr1[] = "welcome to Xihua!";
