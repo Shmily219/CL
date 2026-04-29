@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-//计算阶乘
+//计算阶乘ce
 int Count_jiecheng(int i)
 {
     //int m = 1;
