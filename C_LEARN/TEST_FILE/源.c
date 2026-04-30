@@ -6,15 +6,47 @@
 #include <time.h>
 #include <stdlib.h>
 #include "def.h"
+#include <math.h>
 
 int main() {
+    //打印1到400的素数并统计个数
+    //int count_n = 0;
+    //for (int i = 2; i <= 400; i++) {
+    //    for (int j = 2; j <= i; j++) {
+    //        if (j > i / 2) {
+    //            count_n += 1;
+    //            printf("第%d个素数是%d\n", count_n, i);
+    //            break;
+    //        };
+    //        if (i == 2) {
+    //            count_n += 1;
+    //            printf("第%d个素数是%d\n", count_n, i);
+    //            break;
+    //        }
+    //        if (i % j == 0) {
+    //            break;
+    //        }
+    //    }
+    //}
+    //printf("%d\n",count_n);
+
+    //打印1到400的素数并统计个数
+    //int count_n = 0;
+    //for (int i = 1; i <= 400; i++) {
+    //    if (judge_sushu(i)) {
+    //        count_n++;
+    //        printf("第%d个素数是%d\n",count_n, i);
+    //    }
+    //}
+    //printf("%d\n",count_n);
+
     //写函数交换两个数的和
-    int a = 0;
-    int b = 0;
-    scanf("%d %d",&a,&b);
-    printf("a和b的值是%d,%d\n", a, b);
-    def_Swap(&a, &b);
-    printf("a和b的值是%d,%d\n", a, b);
+    //int a = 0;
+    //int b = 0;
+    //scanf("%d %d",&a,&b);
+    //printf("a和b的值是%d,%d\n", a, b);
+    //def_Swap(&a, &b);
+    //printf("a和b的值是%d,%d\n", a, b);
 
     ////判断字符串是否相等
     //char arr1[] = "I got it!";
@@ -92,6 +124,17 @@ int main() {
     //printf("年份为%d\n月份为%02d\n日期为%02d\n",Y,M,D);
     ////printf("月份为%02d\n",M);
     ////printf("日期为%02d\n", D);
+
+    //开方计算
+    //double a = 0;
+    //scanf("%lf", &a);
+    //printf("读取到的a的值为%.1lf\n", a);
+    //double b = sqrt(a);
+    //printf("%.1lf\n",b);
+    //printf("%.1lf\n", sqrt(a));
+
+
+
     return 0;
 }
 

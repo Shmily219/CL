@@ -22,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "def.h",
-              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.h",
-              "RelativeDocumentMoniker": "def.h",
-              "ToolTip": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.h",
-              "RelativeToolTip": "def.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-30T06:44:16.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "def.c",
-              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.c",
-              "RelativeDocumentMoniker": "def.c",
-              "ToolTip": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.c*",
-              "RelativeToolTip": "def.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-04-30T06:32:35.77Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -58,9 +32,35 @@
               "RelativeDocumentMoniker": "\u6E90.c",
               "ToolTip": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\\u6E90.c*",
               "RelativeToolTip": "\u6E90.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-04-20T08:28:12.055Z",
+              "WhenOpened": "2026-04-30T08:34:39.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "def.c",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.c",
+              "RelativeDocumentMoniker": "def.c",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.c",
+              "RelativeToolTip": "def.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-04-30T08:34:39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "def.h",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.h",
+              "RelativeDocumentMoniker": "def.h",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\TEST_FILE\\def.h",
+              "RelativeToolTip": "def.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-30T08:34:38.302Z",
               "EditorCaption": ""
             }
           ]

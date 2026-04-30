@@ -3,6 +3,25 @@
 #include <stdio.h> //io功能库
 #include "def.h"
 
+int judge_sushu(int a) {
+    if (a < 2) {
+        return 0;
+    }
+    else if (a == 2) {
+        return 1;
+    }
+    else {
+        for (int i = 2; i <= a / 2; i++) {
+            if (a % i == 0) {
+                return 0;
+            }
+            if (i >= a / 2) {
+                return 1;
+            }
+        }
+    }
+};
+
 void def_Swap(int* a,int* b) {
 	int c = *a;
 	*a = *b;
