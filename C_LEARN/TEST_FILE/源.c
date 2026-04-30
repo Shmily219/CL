@@ -5,54 +5,26 @@
 #include <windows.h>
 #include <time.h>
 #include <stdlib.h>
-
-
-//计算阶乘ce
-int Count_jiecheng(int i)
-{
-    //int m = 1;
-    //for (int j = i; j > 0;j--) {
-    //    m *= j;
-    //}
-    //return m;
-
-    if (i == 0)
-        return 1;
-    return i * Count_jiecheng(i - 1);
-};
-
-//计算斐波那契的第n项
-int FBNQ(int i) {
-    if (i == 1 || i == 2) {
-        return 1;
-    }
-    return FBNQ(i - 1) + FBNQ(i - 2);
-};
-
-//生成随机数
-int Create_random() {
-    int low = 10;
-    int hight = 50;
-    srand(time(NULL));
-    int seed = rand()%100+1;  //生成一个1-100的随机数
-    //printf("%d\n", seed);
-    srand(rand() % 100 + 1);
-    int a = rand() % (hight - low + 1) + low;
-    return a;
-}
+#include "def.h"
 
 int main() {
-    //判断字符串是否相等
-    char arr1[] = "I got it!";
-    char arr2[20] = {0};
-    printf("输入文本\n");
-    scanf("%[^\n]",arr2); //%[^\n]可以读取输入的一整行字符串
-    //printf("%d\n",strcmp(arr1,arr2));
-    printf("arr1和arr2的匹配结果是%d\n",strcmp(arr1,arr2));
-    printf("arr1和语句的匹配结果是%d\n",strcmp(arr1, "I got it!"));
-    printf("arr2和语句的匹配结果是%d\n",strcmp(arr2, "I got it!"));
+    //写函数交换两个数的和
+    int a = 0;
+    int b = 0;
+    scanf("%d %d",&a,&b);
+    printf("a和b的值是%d,%d\n", a, b);
+    def_Swap(&a, &b);
+    printf("a和b的值是%d,%d\n", a, b);
 
-
+    ////判断字符串是否相等
+    //char arr1[] = "I got it!";
+    //char arr2[20] = {0};
+    //printf("输入文本\n");
+    //scanf("%[^\n]",arr2); //%[^\n]可以读取输入的一整行字符串
+    ////printf("%d\n",strcmp(arr1,arr2));
+    //printf("arr1和arr2的匹配结果是%d\n",strcmp(arr1,arr2));
+    //printf("arr1和语句的匹配结果是%d\n",strcmp(arr1, "I got it!"));
+    //printf("arr2和语句的匹配结果是%d\n",strcmp(arr2, "I got it!"));
 
     //生成随机数
     //for (int i = 0; i < 5; i++) {
