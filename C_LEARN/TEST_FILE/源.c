@@ -6,9 +6,12 @@
 #include <time.h>
 #include <stdlib.h>
 #include "def.h"
+#include "sort.h"
+#include "find.h"
 #include <math.h>
 
 int main() {
+    srand((unsigned int)time(NULL));
     //打印1到400的素数并统计个数
     //int count_n = 0;
     //for (int i = 2; i <= 400; i++) {
@@ -59,9 +62,9 @@ int main() {
     //printf("arr2和语句的匹配结果是%d\n",strcmp(arr2, "I got it!"));
 
     //生成随机数
-    //for (int i = 0; i < 5; i++) {
+    //for (int i = 0; i < 10; i++) {
     //    Sleep(1000);
-    //    printf("%d\n", Create_random());
+    //    printf("%d\n", Create_random(10, 100));
     //}
 
     ////字符串截取,
@@ -133,7 +136,26 @@ int main() {
     //printf("%.1lf\n",b);
     //printf("%.1lf\n", sqrt(a));
 
+    //判断闰年
+    //int count_n = 0;
+    //for (int i = 1000; i <= 2000; i++) {
+    //    if (judge_runnian(i)) {
+    //        count_n += 1;
+    //        printf("%d\n",i);
+    //    }
+    //}
+    //printf("%d\n", count_n);
 
+    //生成一个随机的数组
+    //int* arr2 = create_random_arr(20, 1, 100);
+    //free(arr2);
+    int arr3[20] = {46,8,58,63,16,12,56,39,90,60,83,59,100,91,83,59,65,53,72,28};
+    Maopao(arr3,sizeof(arr3)/sizeof(arr3[0]));
+    for (int i = 0; i < 20; i++) {
+        printf("%d ",arr3[i]);
+    }
+    printf("\n");
+    two_find(arr3, 20, 72);
 
     return 0;
 }

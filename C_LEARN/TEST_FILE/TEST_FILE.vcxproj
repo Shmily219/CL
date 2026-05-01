@@ -124,10 +124,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="def.c" />
+    <ClCompile Include="find.c" />
+    <ClCompile Include="sort.c" />
     <ClCompile Include="源.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="def.h" />
+    <ClInclude Include="find.h" />
+    <ClInclude Include="sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

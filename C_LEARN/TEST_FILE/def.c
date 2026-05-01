@@ -2,7 +2,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h> //io功能库
 #include "def.h"
+#include <string.h>
+#include <windows.h>
+#include <time.h>
+#include <stdlib.h>
+#include <math.h>
 
+//判断一个数是否是素数
 int judge_sushu(int a) {
     if (a < 2) {
         return 0;
@@ -22,13 +28,14 @@ int judge_sushu(int a) {
     }
 };
 
+//交换两束的值
 void def_Swap(int* a,int* b) {
 	int c = *a;
 	*a = *b;
 	*b = c;
 }
 
-//计算阶乘ce
+//计算阶乘
 int Count_jiecheng(int i)
 {
     //int m = 1;
@@ -51,19 +58,46 @@ int FBNQ(int i) {
 };
 
 //生成随机数
-int Create_random() {
-    int low = 10;
-    int hight = 50;
-    srand(time(NULL));
-    int seed = rand() % 100 + 1;  //生成一个1-100的随机数
-    //printf("%d\n", seed);
-    srand(rand() % 100 + 1);
+int Create_random(int low,int hight) {
+    //srand((unsigned int)time(NULL));  //设置时间随机种子
     int a = rand() % (hight - low + 1) + low;
     return a;
 }
 
-//int main()
-//{
-//
-//	return 0;
-//}
+//判断一年是否是闰年
+int judge_runnian(int a) {
+    if ((a%400 == 0)||(a%100 != 0 && a%4 == 0)) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+//随机创建一个数组，使用了动态数组，用完后记得free
+int* create_random_arr(int size, int low, int high) {
+    if (size <= 0 || high < low) return NULL;//判断size和上下限是否合法
+    int *arr1 = (int*)malloc(size * sizeof(int));//创建动态数组，c++中兼容性更好，
+    //int* arr1 = malloc((size_t)size * sizeof(int));
+    if (!arr1) return NULL;//判断是否为空指针，是的话返回NULL
+
+    for (int i = 0; i < size; i++) {
+        arr1[i] = rand() % (high - low + 1) + low;
+    }
+    printf("生成的随机数组为\n");
+    for (int i = 0; i < size; i++) {
+        if (i == 0)
+            printf("{");
+        if (i != size - 1) {
+            printf("%d,",arr1[i]);
+        }
+        else {
+            printf("%d}",arr1[i]);
+        }
+    }
+    return arr1;
+}
+
+
+
+

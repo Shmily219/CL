@@ -21,9 +21,21 @@
     <ClCompile Include="def.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="sort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="find.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="def.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="find.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
