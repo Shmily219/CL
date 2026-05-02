@@ -1,9 +1,3 @@
 ﻿  sort.c
-D:\Code_Learn\C_LEARN\TEST_FILE\sort.c(18,13): warning C4013: “print_arr”未定义；假设外部返回 int
-D:\Code_Learn\C_LEARN\TEST_FILE\sort.c(28,12): warning C4047: “==”:“int”与“void *”的间接级别不同
-D:\Code_Learn\C_LEARN\TEST_FILE\sort.c(40,9): warning C4013: “pirnt_arr”未定义；假设外部返回 int
-  源.c
-D:\Code_Learn\C_LEARN\TEST_FILE\源.c(153,5): warning C4013: “Maopao”未定义；假设外部返回 int
-  正在生成代码...
-sort.obj : error LNK2019: 无法解析的外部符号 pirnt_arr，函数 Sheele 中引用了该符号
-D:\Code_Learn\C_LEARN\TEST_FILE\x64\Debug\TEST_FILE.exe : fatal error LNK1120: 1 个无法解析的外部命令
+D:\Code_Learn\C_LEARN\TEST_FILE\sort.c(16,9): warning C4013: “print_arr”未定义；假设外部返回 int
+  TEST_FILE.vcxproj -> D:\Code_Learn\C_LEARN\TEST_FILE\x64\Debug\TEST_FILE.exe
