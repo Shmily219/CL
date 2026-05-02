@@ -28,7 +28,7 @@ int judge_sushu(int a) {
     }
 };
 
-//交换两束的值
+//交换两数的值
 void def_Swap(int* a,int* b) {
 	int c = *a;
 	*a = *b;
@@ -60,8 +60,8 @@ int FBNQ(int i) {
 //生成随机数
 int Create_random(int low,int hight) {
     //srand((unsigned int)time(NULL));  //设置时间随机种子
-    int a = rand() % (hight - low + 1) + low;
-    return a;
+    //int a = rand() % (hight - low + 1) + low;
+    return rand() % (hight - low + 1) + low;
 }
 
 //判断一年是否是闰年
@@ -75,29 +75,53 @@ int judge_runnian(int a) {
 }
 
 //随机创建一个数组，使用了动态数组，用完后记得free
-int* create_random_arr(int size, int low, int high) {
-    if (size <= 0 || high < low) return NULL;//判断size和上下限是否合法
-    int *arr1 = (int*)malloc(size * sizeof(int));//创建动态数组，c++中兼容性更好，
-    //int* arr1 = malloc((size_t)size * sizeof(int));
-    if (!arr1) return NULL;//判断是否为空指针，是的话返回NULL
+//int* create_random_arr(int size, int low, int high) {
+//    if (size <= 0 || high < low) return NULL;//判断size和上下限是否合法
+//    int *arr1 = (int*)malloc(size * sizeof(int));//创建动态数组，c++中兼容性更好，
+//    //int* arr1 = malloc((size_t)size * sizeof(int));
+//    if (!arr1) return NULL;//判断是否为空指针，是的话返回NULL
+//
+//    for (int i = 0; i < size; i++) {
+//        arr1[i] = rand() % (high - low + 1) + low;
+//    }
+//    printf("生成的随机数组为\n");
+//    for (int i = 0; i < size; i++) {
+//        if (i == 0)
+//            printf("{");
+//        if (i != size - 1) {
+//            printf("%d,",arr1[i]);
+//        }
+//        else {
+//            printf("%d}",arr1[i]);
+//        }
+//    }
+//    return arr1;
+//}
 
+
+int* cra(int size, int low, int high) {
+    if (low > high || size<=0)
+        return NULL;
+    int* arr1 = (int*)malloc(size * sizeof(int));
+    if (!arr1)
+        return NULL;
     for (int i = 0; i < size; i++) {
         arr1[i] = rand() % (high - low + 1) + low;
-    }
-    printf("生成的随机数组为\n");
-    for (int i = 0; i < size; i++) {
-        if (i == 0)
-            printf("{");
-        if (i != size - 1) {
-            printf("%d,",arr1[i]);
-        }
-        else {
-            printf("%d}",arr1[i]);
-        }
     }
     return arr1;
 }
 
-
-
+void print_arr(int arr1[], int n) {
+    printf("数组为");
+    for (int i = 0; i < n; i++) {
+        if (i == 0)
+            printf("{");
+        if (i != n - 1) {
+            printf("%d,", arr1[i]);
+        }
+        else {
+            printf("%d}\n", arr1[i]);
+        }
+    }
+}
 

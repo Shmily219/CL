@@ -147,15 +147,14 @@ int main() {
     //printf("%d\n", count_n);
 
     //生成一个随机的数组
-    //int* arr2 = create_random_arr(20, 1, 100);
-    //free(arr2);
-    int arr3[20] = {46,8,58,63,16,12,56,39,90,60,83,59,100,91,83,59,65,53,72,28};
-    Maopao(arr3,sizeof(arr3)/sizeof(arr3[0]));
-    for (int i = 0; i < 20; i++) {
-        printf("%d ",arr3[i]);
-    }
-    printf("\n");
-    two_find(arr3, 20, 72);
+    int* arr2 = cra(20, 1, 100);
+    print_arr(arr2, 20);
+    //int arr2[20] = {7,15,17,19,31,48,51,51,51,51,51,51,71,72,74,80,94,95,98,100};
+    Maopao(arr2,20);
+    //Sheele(arr2, 20);
+    print_arr(arr2, 20);
+    //two_find(arr2, 20, 72);
+    free(arr2);
 
     return 0;
 }
