@@ -38,10 +38,10 @@ void Maopao(int arrw[], int n) {
 
 //希尔排序：从局部有序趋向与全局有序
 void Shell(int arr[], int n) { //DG是默认间距Defalt Gap
-    printf("正在调用希尔排序\n");
+    //printf("正在调用希尔排序\n");
     int countn = 0;
     for(int gap = n/2;gap>=1;gap/=2){
-        for (int i = gap; i < n; i++) {  //i是每个子数组的下标，其所有的下标应该是i+n*gap
+        for (int i = gap; i < n; i++) {  //i是每个子数组第二个元素的下标，其所有的下标应该是i+n*gap
             int a = arr[i];
             int j = i;
             while (j >= gap && a < arr[j - gap]) {
@@ -51,8 +51,8 @@ void Shell(int arr[], int n) { //DG是默认间距Defalt Gap
             print_arr(arr,n);
             arr[j] = a;
         }
-        printf("第%d趟排序后的数组为\n",++countn);
-        print_arr(arr, n);
+        //printf("第%d趟排序后的数组为\n",++countn);
+        //print_arr(arr, n);
     }
     //printf("希尔排序好的数组为");
     //print_arr(arr, n);
