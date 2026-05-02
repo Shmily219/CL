@@ -54,7 +54,7 @@ void Shell(int arr[], int n) { //DG是默认间距Defalt Gap
         //printf("第%d趟排序后的数组为\n",++countn);
         //print_arr(arr, n);
     }
-    //printf("希尔排序好的数组为");
+    //printf("希尔排序后的数组为");
     //print_arr(arr, n);
 }
 
