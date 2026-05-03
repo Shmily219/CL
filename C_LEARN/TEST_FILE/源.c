@@ -147,16 +147,27 @@ int main() {
     //printf("%d\n", count_n);
 
     //生成一个随机的数组
-    int* arr2 = cra(25, 1, 100);
+    //int* arr2 = cra(25, 1, 100);
     //int arr2[25] = {56,19,41,25,90,29,55,25,64,77,27,25,14,63,34,14,51,4,69,24,97,68,100,34,32}
-    print_arr(arr2, 25);
+    //print_arr(arr2, 25);
     //Maopao(arr2,25);
     //Insert(arr2, 25);
     //Shell(arr2, 25);
-    Qsert(arr2, 0, 24);
-    print_arr(arr2, 25);
+    //Qsert(arr2, 0, 24);
+    //print_arr(arr2, 25);
     //two_find(arr2, 20, 72);
-    free(arr2);
+    //free(arr2);
+
+    char* buf = (int*)malloc(20 * sizeof(char));
+    //char buf[100];
+    int a = 0;
+    char s[10];
+    fgets(buf, sizeof(buf), stdin);
+    sscanf(buf, "%d %9s", &a, s);
+    for (int i = 0; buf[i] != NULL; i++) {
+        printf("%c ",buf[i]);
+    }
+
 
     return 0;
 }

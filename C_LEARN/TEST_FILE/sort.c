@@ -71,7 +71,7 @@ void Qsert(int arr[],int L,int R) {
         arr[high] = arr[low];
     }
     arr[low] = a;
-    print_arr(arr, 25);
+    print_arr(arr, R+1);
     Qsert(arr,L,low-1);
     Qsert(arr,low+1,R);
 }
