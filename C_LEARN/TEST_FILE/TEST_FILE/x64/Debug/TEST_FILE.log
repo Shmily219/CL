@@ -1,4 +1,3 @@
-﻿  源.c
-D:\Code_Learn\C_LEARN\TEST_FILE\源.c(167,28): warning C4047: “!=”:“int”与“void *”的间接级别不同
-D:\Code_Learn\C_LEARN\TEST_FILE\源.c(161,11): warning C4133: “初始化”: 从“int *”到“char *”的类型不兼容
+﻿  def.c
+D:\Code_Learn\C_LEARN\TEST_FILE\def.c(29,1): warning C4715: “judge_sushu”: 不是所有的控件路径都返回值
   TEST_FILE.vcxproj -> D:\Code_Learn\C_LEARN\TEST_FILE\x64\Debug\TEST_FILE.exe

@@ -50,12 +50,32 @@ int Count_jiecheng(int i)
 };
 
 //计算斐波那契的第n项
-int FBNQ(int i) {
+int FBNQDG(int i) {
     if (i == 1 || i == 2) {
         return 1;
     }
-    return FBNQ(i - 1) + FBNQ(i - 2);
+    return FBNQDG(i - 1) + FBNQDG(i - 2);
 };
+int FBNQDD(int i) {
+    if (i <= 0) {
+        return -1;
+    }
+    else if (i < 3) {
+        return 1;
+    }
+    int a = 1;
+    int b = 1;
+    int c = 0;
+    while (i >= 3) {
+        c = a + b;
+        a = b;
+        b = c;
+        i--;
+    }
+    return c;
+}
+
+
 
 //生成随机数
 int Create_random(int low,int hight) {

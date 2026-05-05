@@ -92,11 +92,11 @@ int main() {
     
 
     //计算斐波那契
-    //printf("输入你准备计算斐波那契的数\n");
-    //int b = 0;
-    //scanf("%d",&b);
-    //printf("斐波那契的第%d项是%d\n",b,FBNQ(b));
-
+    printf("输入你准备计算斐波那契的数\n");
+    int b = 0;
+    scanf("%d",&b);
+    printf("斐波那契的第%d项是%d\n",b,FBNQDD(b));
+    printf("斐波那契的第%d项是%d\n", b, FBNQDG(b));
     //四数找最大
     //int a, b, c, d, e;
     //int arrf[4] = {0};
@@ -158,17 +158,25 @@ int main() {
     //two_find(arr2, 20, 72);
     //free(arr2);
 
-    char* buf = (int*)malloc(20 * sizeof(char));
-    //char buf[100];
-    int a = 0;
-    char s[10];
-    fgets(buf, sizeof(buf), stdin);
-    sscanf(buf, "%d %9s", &a, s);
-    for (int i = 0; buf[i] != NULL; i++) {
-        printf("%c ",buf[i]);
-    }
+    //char* Str = malloc(20 * sizeof(char));
+    //printf("请输入准备分割的字符串\n");
 
+    //if (fgets(Str, 20, stdin) == NULL) {
+    //    free(Str);
+    //    return 1;
+    //}
 
+    ////fgets(Str, 20, stdin);
+
+    //Str[strcspn(Str, "\n")] ='\0';
+
+    ////sscanf(Str,"%s\n",20);
+
+    //for (int i = 0; Str[i] !='\0'; i++) {
+    //    printf("%c ", Str[i]);
+    //}
+
+    //free(Str);
     return 0;
 }
 
