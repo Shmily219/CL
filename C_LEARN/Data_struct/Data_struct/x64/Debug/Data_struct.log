@@ -1,1 +1,3 @@
-﻿  Data_struct.vcxproj -> D:\Code_Learn\C_LEARN\Data_struct\x64\Debug\Data_struct.exe
+﻿  def.c
+D:\Code_Learn\C_LEARN\Data_struct\def.c(92,1): warning C4715: “Findsq”: 不是所有的控件路径都返回值
+  Data_struct.vcxproj -> D:\Code_Learn\C_LEARN\Data_struct\x64\Debug\Data_struct.exe

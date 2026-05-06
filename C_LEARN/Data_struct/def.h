@@ -2,7 +2,7 @@
 // 声明结构体
 typedef struct {
 	int* p;
-	int max_len;
+	int maxlen;
 	int len;
 }Sqlist;
 
