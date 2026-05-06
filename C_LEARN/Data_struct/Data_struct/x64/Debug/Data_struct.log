@@ -1,3 +1,8 @@
-﻿  def.c
-D:\Code_Learn\C_LEARN\Data_struct\def.c(92,1): warning C4715: “Findsq”: 不是所有的控件路径都返回值
+﻿  test.c
+D:\Code_Learn\C_LEARN\Data_struct\test.c(11,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\Code_Learn\C_LEARN\Data_struct\test.c(26,2): warning C4013: “printsq”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(28,2): warning C4013: “Insertsq”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(31,2): warning C4013: “Delectsq”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(34,56): warning C4013: “Findsqn”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(36,41): warning C4013: “Findsqi”未定义；假设外部返回 int
   Data_struct.vcxproj -> D:\Code_Learn\C_LEARN\Data_struct\x64\Debug\Data_struct.exe

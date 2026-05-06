@@ -1,10 +1,22 @@
 ﻿#pragma once
-// 声明结构体
+// 声明一个顺序表
 typedef struct {
 	int* p;
 	int maxlen;
 	int len;
 }Sqlist;
+
+//声明一个单链表节点的结构体
+typedef struct Node {
+	int data;  //数据域
+	struct Node* next;  //该指针指向与Node自身属性相同的其他节点结构体
+}Node;
+
+//声明一个单链表的结构体，用于封装头指针和链表长度
+typedef struct{
+	Node* head;  //指向头节点的指针
+	int len;
+}LinkList;
 
 // 声明函数
 void Initsq(Sqlist* L);

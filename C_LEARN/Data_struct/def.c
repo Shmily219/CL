@@ -78,7 +78,7 @@ int Delectsq(Sqlist* L, int l) {
 }
 
 //查找一个元素是否在顺序表中
-int Findsq(Sqlist* L, int f) {
+int Findsqn(Sqlist* L, int f) {
 	for (int i = 0; i <= L->len; i++) {
 		if (i == L->len) {
 			printf("未找到\n");
@@ -89,4 +89,52 @@ int Findsq(Sqlist* L, int f) {
 			return i + 1;
 		}
 	}
+}
+
+//按下标查找顺序表
+int Findsqi(Sqlist* L, int i) {
+	return L->p[i - 1];
+}
+
+
+
+//初始化一个单链表
+void InitLinkList(LinkList* L) {
+	if (L->head == NULL) {
+		return;
+	}
+	L->head = NULL;
+	L->len = 0;
+}
+
+//创建新节点
+Node* CreateNode(int i) {
+	Node* nnode = (Node*)malloc(sizeof(Node));  //分配新的节点
+	nnode->data = i;
+	nnode->next = NULL;
+	return nnode;
+}
+
+//打印链表
+void printlinklist(LinkList *L) {
+	if (L == NULL || L->head == NULL) {
+		printf("空链表\n");
+	}
+	Node* cur = L->head;				//cur是一个专门指向Node结构体的指针
+	while (cur != NULL) {
+		printf("%d",cur->data);
+		if (cur->next != NULL) {		//cur指针如果下一个不为空，则准备打印下一个节点
+			printf("->");
+		}
+		cur = cur->next;
+	}
+	printf("\n");
+}
+
+//头插法
+void Headin(LinkList* L,int data) {
+	if (L == NULL) return 0;			//判断单链表是否存在
+	Node* newnode = CreateNode(data);	//创建新节点
+	
+	
 }
