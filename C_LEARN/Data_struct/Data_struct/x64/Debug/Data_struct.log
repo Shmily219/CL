@@ -1,1 +1,9 @@
-﻿  Data_struct.vcxproj -> D:\Code_Learn\C_LEARN\Data_struct\x64\Debug\Data_struct.exe
+﻿  test.c
+D:\Code_Learn\C_LEARN\Data_struct\test.c(11,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\Code_Learn\C_LEARN\Data_struct\test.c(49,2): warning C4013: “InitLinkList”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(51,3): warning C4013: “Yheadin”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(52,3): warning C4013: “Ytailin”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(53,3): warning C4013: “printlinklist”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(55,2): warning C4013: “Middlein”未定义；假设外部返回 int
+D:\Code_Learn\C_LEARN\Data_struct\test.c(57,2): warning C4013: “Delectnode”未定义；假设外部返回 int
+  Data_struct.vcxproj -> D:\Code_Learn\C_LEARN\Data_struct\x64\Debug\Data_struct.exe

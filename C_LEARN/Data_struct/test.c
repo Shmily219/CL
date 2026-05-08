@@ -47,7 +47,14 @@ int main()
 	//单链表操作
 	LinkList L;			//声明
 	InitLinkList(&L);	//初始化
-	Yheadin(&L,rand() % 100 + 1);		//创建节点
+	for (int i = 0; i < 10; i++) {
+		Yheadin(&L, rand() % 100 + 1);
+		Ytailin(&L, rand() % 100 + 1);
+		printlinklist(&L);
+	}//创建节点
+	Middlein(&L, rand() % 100 + 1,3);
+	printlinklist(&L);
+	Delectnode(&L, 21);
 	printlinklist(&L);
 
 	return 0;

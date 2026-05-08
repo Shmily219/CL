@@ -98,7 +98,8 @@ int Findsqi(Sqlist* L, int i) {
 
 //创建新节点
 Node* CreateNode(int i) {
-	Node* nnode = (Node*)malloc(sizeof(Node));  //分配新的节点
+	Node* nnode = malloc(sizeof(Node));  //分配新的节点
+	if (nnode == NULL)return;
 	nnode->data = i;
 	nnode->next = NULL;
 	return nnode;
@@ -107,11 +108,8 @@ Node* CreateNode(int i) {
 //初始化一个单链表(带头节点)
 void InitLinkList(LinkList* L) {
 	if (L == NULL) return;//判断指针是否为空
-	// 如果已经初始化过，先释放旧头结点
-	if (L->head != NULL) {
-		free(L->head);
-	}
-	L->head = (Node*)malloc(sizeof(Node));
+	Node* cur = L->head;
+	L->head = malloc(sizeof(Node));
 	if (L->head == NULL) {
 		printf("内存分配失败\n");
 		return;
@@ -140,8 +138,7 @@ void printlinklist(LinkList *L) {
 
 //头插法
 void Yheadin(LinkList* L, int data) {
-	if (L == NULL)return;
-	if (L->head == NULL) return;
+	if (L == NULL||L->head == NULL)return;
 	Node* newnode = CreateNode(data);
 	if (newnode == NULL)return;
 	if (L->head->next == NULL) {
@@ -156,8 +153,7 @@ void Yheadin(LinkList* L, int data) {
 
 //尾插法
 void Ytailin(LinkList* L,int data) {
-	if (L == NULL)return;
-	if (L->head == NULL) return;
+	if (L == NULL || L->head == NULL)return;
 	Node* newnode = CreateNode(data);
 	if (newnode == NULL)return;
 	Node* p = L->head;
@@ -170,8 +166,7 @@ void Ytailin(LinkList* L,int data) {
 
 //指定位置插入
 void Middlein(LinkList* L, int data, int loc) {
-	if (L == NULL)return;
-	if (L->head == NULL) return;
+	if (L == NULL || L->head == NULL)return;
 	if (loc<1 || loc>L->len+1) {
 		printf("位置不合法!\n");
 			return;
@@ -186,3 +181,122 @@ void Middlein(LinkList* L, int data, int loc) {
 	p->next = newnode;					//再把新节点作为前一节点的前驱
 	L->len++;
 }
+
+//指定位置删除节点
+int Delectnode(LinkList* L, int loc) {
+	if (L == NULL || L->head == NULL) { 
+		printf("链表未初始化\n");
+		return -1; 
+	}
+	if (loc<1 || loc>L->len) {
+		printf("位置不合法!\n");
+		return -1;
+	}
+	Node* cur = L->head;
+	for (int i = 1; i < loc; i++) {
+		cur = cur->next;
+	}
+	Node* waittodelect = cur->next;
+	int a = waittodelect->data;
+	cur->next = cur->next->next;  //可以加cur下下个节点的判空if，但是一般来说链表都是规范的，我也就懒得写了
+	free(waittodelect);
+	L->len--;
+	return a;
+}
+
+
+//双链表
+//创建双链表专属的节点
+Dnode* Creatednode(int data) {
+	Dnode* newnode = malloc(sizeof(Dnode));
+	if (newnode == NULL){
+		printf("内存分配失败!\n");
+		return NULL;
+	}
+	newnode->data = data;
+	newnode->prior = NULL;
+	newnode->next = NULL;
+	return newnode;
+}
+
+//初始化双链表
+void InitDLinklist(Dlinklist* L) {
+	if (L == NULL)return;
+	//如果分配的L是一个脏数据中的旧链表，则进行free
+	if (L->head != NULL) {
+		Dnode* p = L->head->next;	//待删除节点
+		while (p != NULL) {
+			Dnode* next = p->next;	//待删除节点的下一节点
+			free(p);
+			p = next;
+		}
+		free(L->head);
+	}
+
+	L->head = malloc(sizeof(Dnode));
+	if (L->head == NULL) {
+		printf("内存分配失败！\n");
+		return;
+	}
+	L->head->next = NULL;
+	L->head->prior = NULL;
+	L->len = 0;
+	return;
+}
+
+//双链表头插法
+void Dheadin(Dlinklist* L, int data) {
+	if (L == NULL || L->head == NULL)return;
+	Dnode* newnode = Creatednode(data);
+	if (newnode == NULL) {
+		printf("内存分配失败！\n");
+		return;
+	}
+	newnode->next = L->head->next;	//优先处理新节点
+	newnode->prior = L->head;
+	if (L->head->next != NULL) {
+		L->head->next->prior = newnode;	//如果链表非空，先把后面节点的前驱改为新节点，不然指针要判空
+	}
+	L->head->next = newnode;
+	L->len++;
+}
+
+//双链表尾插法
+void Dtailin(Dlinklist* L, int data) {
+	if (L == NULL || L->head == NULL)return;
+	Dnode* newnode = Creatednode(data);
+	if (newnode == NULL) {
+		printf("内存分配失败!\n");
+		return;
+	}
+	Dnode* cur = L->head;
+	while(cur->next!=NULL) cur = cur->next;
+	newnode->prior = cur;
+	cur->next = newnode;
+	L->len++;
+}
+
+//双链表指定位置插入法
+void Dmiddlein(Dlinklist* L, int data, int loc) {
+	if (L == NULL || L->head == NULL)return;
+	if (loc<1 || loc>L->len + 1) {
+		printf("位置不合法！\n");
+		return;
+	};
+	Dnode* newnode = Creatednode(data);
+	if (newnode == NULL) {
+		printf("内存分配失败！\n");
+		return;
+	}
+	Dnode* cur = L->head;
+	for (int i = 1; i < loc; i++) {
+		cur = cur->next;
+	}
+	newnode->next = cur->next;
+	newnode->prior = cur;
+	if (cur->next != NULL) cur->next->prior = newnode;
+	cur->next = newnode;
+	L->len++;
+}
+
+//双链表删除指定位置的元素

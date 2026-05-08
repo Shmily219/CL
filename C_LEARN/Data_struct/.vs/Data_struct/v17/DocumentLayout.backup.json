@@ -35,8 +35,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-05-05T07:33:11.254Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -46,7 +45,7 @@
               "RelativeDocumentMoniker": "def.c",
               "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\def.c",
               "RelativeToolTip": "def.c",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAjwG8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAANEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-05T07:32:15.498Z",
               "IsPinned": true,
@@ -58,12 +57,11 @@
               "Title": "test.c",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c",
               "RelativeDocumentMoniker": "test.c",
-              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c",
-              "RelativeToolTip": "test.c",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACkAAAAmAAAAAAAAAA==",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c*",
+              "RelativeToolTip": "test.c*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-05T07:32:01.788Z",
-              "IsPinned": true,
               "EditorCaption": ""
             }
           ]
