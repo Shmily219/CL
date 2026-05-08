@@ -92,11 +92,11 @@ int main() {
     
 
     //计算斐波那契
-    printf("输入你准备计算斐波那契的数\n");
-    int b = 0;
-    scanf("%d",&b);
-    printf("斐波那契的第%d项是%d\n",b,FBNQDD(b));
-    printf("斐波那契的第%d项是%d\n", b, FBNQDG(b));
+    //printf("输入你准备计算斐波那契的数\n");
+    //int b = 0;
+    //scanf("%d",&b);
+    //printf("斐波那契的第%d项是%d\n",b,FBNQDD(b));
+    //printf("斐波那契的第%d项是%d\n", b, FBNQDG(b));
     //四数找最大
     //int a, b, c, d, e;
     //int arrf[4] = {0};
@@ -177,6 +177,16 @@ int main() {
     //}
 
     //free(Str);
+    //Hanoi(9, 'a', 'b', 'c');
+
+    int a[3][4] = { 1,2,3,4,5,6,7,8,9,10,11,12 };
+    printf("%p\n", a);
+    printf("%p\n", a+1);
+    printf("%p\n", &a[0]);
+    printf("%p\n", &a[0] + 1);
+    printf("%p\n", &a);
+    printf("%p\n", &a+1);
+
     return 0;
 }
 

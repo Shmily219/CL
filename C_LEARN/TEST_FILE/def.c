@@ -145,3 +145,18 @@ void print_arr(int arr1[], int n) {
     }
 }
 
+void Hanoi(int num,char a,char b,char c) {  //a起始，b辅助，c目标
+    static int countn = 1;  //统计移动次数
+
+    if (num == 1) {
+        printf("第%d次:从 %c 移动至 %c\n", countn, a, c);
+        countn++;
+    }
+    else {
+        Hanoi(num - 1, a, c, b);  //把num-1个圆盘通过b移动到c，保留最下面的最大的圆盘
+        printf("第%d次:从 %c 移动至 %c\n", countn, a, c);
+        countn++;
+        Hanoi(num - 1, b, a, c);
+    }
+}
+

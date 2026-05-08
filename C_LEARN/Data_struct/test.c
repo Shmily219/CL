@@ -47,7 +47,8 @@ int main()
 	//单链表操作
 	LinkList L;			//声明
 	InitLinkList(&L);	//初始化
-	CreateNode(5);		//创建节点
+	Yheadin(&L,rand() % 100 + 1);		//创建节点
+	printlinklist(&L);
 
 	return 0;
 }

@@ -79,7 +79,7 @@ int Delectsq(Sqlist* L, int l) {
 
 //查找一个元素是否在顺序表中
 int Findsqn(Sqlist* L, int f) {
-	for (int i = 0; i <= L->len; i++) {
+	for (int i = 0; i < L->len; i++) {
 		if (i == L->len) {
 			printf("未找到\n");
 			return -1;
@@ -96,17 +96,6 @@ int Findsqi(Sqlist* L, int i) {
 	return L->p[i - 1];
 }
 
-
-
-//初始化一个单链表
-void InitLinkList(LinkList* L) {
-	if (L->head == NULL) {
-		return;
-	}
-	L->head = NULL;
-	L->len = 0;
-}
-
 //创建新节点
 Node* CreateNode(int i) {
 	Node* nnode = (Node*)malloc(sizeof(Node));  //分配新的节点
@@ -115,12 +104,30 @@ Node* CreateNode(int i) {
 	return nnode;
 }
 
+//初始化一个单链表(带头节点)
+void InitLinkList(LinkList* L) {
+	if (L == NULL) return;//判断指针是否为空
+	// 如果已经初始化过，先释放旧头结点
+	if (L->head != NULL) {
+		free(L->head);
+	}
+	L->head = (Node*)malloc(sizeof(Node));
+	if (L->head == NULL) {
+		printf("内存分配失败\n");
+		return;
+	}
+	L->head->next = NULL;
+	L->len = 0;
+}
+
+
+//带头节点
 //打印链表
 void printlinklist(LinkList *L) {
 	if (L == NULL || L->head == NULL) {
 		printf("空链表\n");
 	}
-	Node* cur = L->head;				//cur是一个专门指向Node结构体的指针
+	Node* cur = L->head->next;				//cur是一个专门指向Node结构体的指针
 	while (cur != NULL) {
 		printf("%d",cur->data);
 		if (cur->next != NULL) {		//cur指针如果下一个不为空，则准备打印下一个节点
@@ -132,9 +139,50 @@ void printlinklist(LinkList *L) {
 }
 
 //头插法
-void Headin(LinkList* L,int data) {
-	if (L == NULL) return 0;			//判断单链表是否存在
-	Node* newnode = CreateNode(data);	//创建新节点
-	
-	
+void Yheadin(LinkList* L, int data) {
+	if (L == NULL)return;
+	if (L->head == NULL) return;
+	Node* newnode = CreateNode(data);
+	if (newnode == NULL)return;
+	if (L->head->next == NULL) {
+		L->head->next = newnode;
+		L->len++;
+		return;
+	}
+	newnode->next = L->head->next;
+	L->head->next = newnode;
+	L->len++;
+}
+
+//尾插法
+void Ytailin(LinkList* L,int data) {
+	if (L == NULL)return;
+	if (L->head == NULL) return;
+	Node* newnode = CreateNode(data);
+	if (newnode == NULL)return;
+	Node* p = L->head;
+	while (p->next != NULL) {
+		p = p->next;
+	}
+	p->next = newnode;
+	L->len++;
+}
+
+//指定位置插入
+void Middlein(LinkList* L, int data, int loc) {
+	if (L == NULL)return;
+	if (L->head == NULL) return;
+	if (loc<1 || loc>L->len+1) {
+		printf("位置不合法!\n");
+			return;
+	}
+	Node* newnode = CreateNode(data);
+	if (newnode == NULL)return;
+	Node* p = L->head;
+	for (int i = 0; i < loc-1;i++) {  //寻找插入位置
+		p = p->next;
+	}
+	newnode->next = p->next;			//先把新节点的后继节点接上
+	p->next = newnode;					//再把新节点作为前一节点的前驱
+	L->len++;
 }
