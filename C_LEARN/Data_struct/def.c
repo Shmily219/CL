@@ -7,14 +7,22 @@
 
 //初始化一个顺序表
 void Initsq(Sqlist *L) {
-	L->p = (int*)malloc(10 * sizeof(int));
-	L->maxlen = 10;
-	L->len = 0;
+	L->p = (int*)malloc(10 * sizeof(int));					//p为存储顺序表的一维数组
+	if (L->p == NULL) {
+		printf("顺序表的数组分配失败！\n");
+		return;
+	}
+	L->maxlen = 10;											//顺序表的最大容量
+	L->len = 0;												//顺序表的当前占用量
 }
 
 //输出顺序表的内容
 void printsq(Sqlist* L) {
-	if (L == NULL) {
+	if (L == NULL) {										//检查顺序表是否初始化，是否合规
+		return;
+	}
+	if (L->len == 0) {
+		printf("空表{}\n");
 		return;
 	}
 	for (int i = 0; i < L->len; i++) {
@@ -31,33 +39,39 @@ void printsq(Sqlist* L) {
 }
 
 //扩展一个顺序表
-void Increasesq(Sqlist* L,int n) {
-	//int* 
-	//int* data = (int*)malloc(L->max_len + n);
-	int* data = L->p;
-	L->p = (int*)malloc((L->maxlen + n) * sizeof(int));
-	for (int i = 0; i < L->maxlen; i++) {
-		L->p[i] = data[i];
+void Increasesq(Sqlist* L, int n) {	
+	if (L == NULL || n <= 0) {
+		printf("链表不规范或扩展数位不合理!\n");
+		return;
 	}
-	L->maxlen += n;
-	free(data);
+	//int* data = L->p;
+	int* new_data = malloc((L->maxlen + n) * sizeof(int));	//新创建一个指针指向新开辟的数组内存空间
+	if (new_data == NULL) {									//防御性排错
+		printf("内存分配失败!\n");
+		return;
+	}
+	for (int i = 0; i < L->len; i++) {						//将旧空间的数据复制到新空间
+		new_data[i] = L->p[i];
+	}
+	L->maxlen += n;											//顺序表基础属性变更
+	free(L->p);												//释放旧空间
+	L->p = new_data;										//将旧空间的指针指向新空间
 }
 
 //顺序表的插入，d->data是数据，l->location是位置
 bool Insertsq(Sqlist* L, int d, int l) {
-	if (l<0||l>(L->len)-1) {
+	if (l<0||l>(L->len)-1) {								//防御性排错
 		printf("位置不合法\n");
 		return false;
 	}
 	while (L->len >= L->maxlen) {
 		Increasesq(L, 5);
 	}
-	int move_num = (L->len) - l + 1;
-	//printf("移动数目为%d\n",move_num);
+	int move_num = (L->len) - l + 1;						//假设顺序表有len个数，插入到l处，则插入的下标为l-1，需要移动的个数是len-(l-1)=len-l+1
 	for (int i = L->len; i > L->len - move_num; i--) {
 		 L->p[i] = L->p[i-1];//数据后移
 	}
-	L->p[l-1] = d;
+	L->p[l-1] = d;											//插入数据
 	L->len++;
 	return true;
 }
@@ -68,9 +82,9 @@ int Delectsq(Sqlist* L, int l) {
 		printf("位置不合法\n");
 		return 1;
 	}
-	int result = L->p[l-1];
-	for (int i = l; i <+ L->len; i++) {
-		L->p[i-1] = L->p[i];//朝前赋值
+	int result = L->p[l-1];									//删除第l个元素，其下标为l-1
+	for (int i = l; i < L->len+1; i++) {					//删除第l个元素，则l-1个元素不动，需要移动的元素为len-(l-1) = len-l+1
+		L->p[i-1] = L->p[i];								//朝前赋值
 	}
 	L->len--;
 	printf("删除的值为%d\n",result);
@@ -300,3 +314,26 @@ void Dmiddlein(Dlinklist* L, int data, int loc) {
 }
 
 //双链表删除指定位置的元素
+int Delectdnode(Dlinklist* L, int loc) {
+	if (L == NULL || L->head == NULL) {
+		printf("链表未初始化！\n");
+		return -1;
+	}
+	if (loc<1 || loc>L->len) {
+		printf("删除位置不合法!\n");
+		return -1;
+	}
+	Dnode* cur = L->head;
+	for (int i = 1; i < loc; i++) {
+		cur = cur->next;
+	}
+	Dnode* waittodelect = cur->next;
+	int a = waittodelect->data;
+	cur->next = waittodelect->next;
+	if (waittodelect->next != NULL)waittodelect->next->prior = cur;
+	free(waittodelect);
+	L->len--;
+	return a;
+}
+
+//循环链表就是把上面所有的尾节点接上头节点，复试再搞
