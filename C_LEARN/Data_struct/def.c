@@ -69,7 +69,7 @@ bool Insertsq(Sqlist* L, int d, int l) {
 	}
 	int move_num = (L->len) - l + 1;						//假设顺序表有len个数，插入到l处，则插入的下标为l-1，需要移动的个数是len-(l-1)=len-l+1
 	for (int i = L->len; i > L->len - move_num; i--) {
-		 L->p[i] = L->p[i-1];//数据后移
+		 L->p[i] = L->p[i-1];								//数据后移
 	}
 	L->p[l-1] = d;											//插入数据
 	L->len++;
@@ -92,15 +92,15 @@ int Delectsq(Sqlist* L, int l) {
 }
 
 //查找一个元素是否在顺序表中
-int Findsqn(Sqlist* L, int f) {
-	for (int i = 0; i < L->len; i++) {
-		if (i == L->len) {
-			printf("未找到\n");
-			return -1;
-		}
+int Findsqn(Sqlist* L, int f) {								
+	for (int i = 0; i < L->len; i++) {						//遍历顺序表
 		if (L->p[i] == f) {
 			printf("已找到，在链表的第%d个位置\n", i + 1);
 			return i + 1;
+		}
+		if (i == L->len-1) {								//如果最后一个判断依旧匹配不上，则返回对应信心		
+			printf("未找到\n");
+			return -1;
 		}
 	}
 }
@@ -112,7 +112,7 @@ int Findsqi(Sqlist* L, int i) {
 
 //创建新节点
 Node* CreateNode(int i) {
-	Node* nnode = malloc(sizeof(Node));  //分配新的节点
+	Node* nnode = malloc(sizeof(Node));						//分配新的节点		
 	if (nnode == NULL)return;
 	nnode->data = i;
 	nnode->next = NULL;
@@ -121,28 +121,28 @@ Node* CreateNode(int i) {
 
 //初始化一个单链表(带头节点)
 void InitLinkList(LinkList* L) {
-	if (L == NULL) return;//判断指针是否为空
-	Node* cur = L->head;
-	L->head = malloc(sizeof(Node));
-	if (L->head == NULL) {
+	if (L == NULL) return;									//判断指针是否为空
+	Node* cur = L->head;									//创建指向头节点的指针
+	L->head = malloc(sizeof(Node));							//顺序表链头创建节点实例
+	if (L->head == NULL) {									//防御性
 		printf("内存分配失败\n");
 		return;
 	}
-	L->head->next = NULL;
-	L->len = 0;
+	L->head->next = NULL;									//头节点指空
+	L->len = 0;									
 }
 
 
 //带头节点
 //打印链表
 void printlinklist(LinkList *L) {
-	if (L == NULL || L->head == NULL) {
+	if (L == NULL || L->head == NULL) {						//防御
 		printf("空链表\n");
 	}
-	Node* cur = L->head->next;				//cur是一个专门指向Node结构体的指针
-	while (cur != NULL) {
+	Node* cur = L->head->next;								//cur是一个专门指向Node结构体的指针
+	while (cur != NULL) {									//cur为空时说明指向了最后一个节点的next指针，表明所有的链表已经遍历完毕
 		printf("%d",cur->data);
-		if (cur->next != NULL) {		//cur指针如果下一个不为空，则准备打印下一个节点
+		if (cur->next != NULL) {							//cur指针如果下一个不为空，则准备打印下一个节点
 			printf("->");
 		}
 		cur = cur->next;
@@ -151,27 +151,27 @@ void printlinklist(LinkList *L) {
 }
 
 //头插法
-void Yheadin(LinkList* L, int data) {
-	if (L == NULL||L->head == NULL)return;
-	Node* newnode = CreateNode(data);
-	if (newnode == NULL)return;
-	if (L->head->next == NULL) {
+void Yheadin(LinkList* L, int data) {			
+	if (L == NULL||L->head == NULL)return;					//防御
+	Node* newnode = CreateNode(data);						//创建拟插入的新节点
+	if (newnode == NULL)return;								//防御
+	if (L->head->next == NULL) {							//已经实例化的空链表特殊处理，因为L->head->next要赋值给新节点，主动赋值点不能为空，也就是不能出现空指针
 		L->head->next = newnode;
 		L->len++;
 		return;
 	}
-	newnode->next = L->head->next;
-	L->head->next = newnode;
+	newnode->next = L->head->next;							//优先设置新节点的后继节点关系
+	L->head->next = newnode;								//插入节点作为头节点的后继节点
 	L->len++;
 }
 
 //尾插法
 void Ytailin(LinkList* L,int data) {
 	if (L == NULL || L->head == NULL)return;
-	Node* newnode = CreateNode(data);
-	if (newnode == NULL)return;
-	Node* p = L->head;
-	while (p->next != NULL) {
+	Node* newnode = CreateNode(data);						//创建拟插入节点
+	if (newnode == NULL)return;								//防御
+	Node* p = L->head;										//创建一个节点指针，使其寻找最后一个元素，结合下面的while循环
+	while (p->next != NULL) {								//不依赖len属性能让链表更具安全性
 		p = p->next;
 	}
 	p->next = newnode;
@@ -180,19 +180,19 @@ void Ytailin(LinkList* L,int data) {
 
 //指定位置插入
 void Middlein(LinkList* L, int data, int loc) {
-	if (L == NULL || L->head == NULL)return;
+	if (L == NULL || L->head == NULL)return;				//防御性
 	if (loc<1 || loc>L->len+1) {
 		printf("位置不合法!\n");
 			return;
 	}
-	Node* newnode = CreateNode(data);
-	if (newnode == NULL)return;
-	Node* p = L->head;
-	for (int i = 0; i < loc-1;i++) {  //寻找插入位置
+	Node* newnode = CreateNode(data);						//创建新节点
+	if (newnode == NULL)return;								
+	Node* p = L->head;										//创建指针以寻找插入位置
+	for (int i = 0; i < loc-1;i++) {						//寻找插入位置
 		p = p->next;
 	}
-	newnode->next = p->next;			//先把新节点的后继节点接上
-	p->next = newnode;					//再把新节点作为前一节点的前驱
+	newnode->next = p->next;								//先把新节点的后继节点接上
+	p->next = newnode;										//再把新节点作为前一节点的前驱
 	L->len++;
 }
 
