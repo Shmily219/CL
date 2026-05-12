@@ -337,3 +337,83 @@ int Delectdnode(Dlinklist* L, int loc) {
 }
 
 //循环链表就是把上面所有的尾节点接上头节点，复试再搞
+
+//初始化一个栈表
+void Initstack(Sqstack* S) {
+	if (S == NULL) {
+		printf("链表未声明\n");
+		return;
+	}
+	S->top = -1;
+}
+
+//栈表插入元素
+int Stackin(Sqstack* S, int data) {
+	if (S == NULL) {
+		printf("链表异常\n");
+		return 1;
+	}
+	if (S->top == sizeof(S->data)/sizeof(S->data[0])) {
+		printf("栈表已满无法插入\n");
+		return 1;
+	}
+	S->top += 1;
+	S->data[S->top] = data;
+	return 0;
+}
+
+//栈表删除元素
+int Stackout(Sqstack* S) {
+	if (S == NULL) {
+		printf("链表异常\n");
+		return -1;
+	}
+	if (S->top == -1) {
+		printf("链表已空\n");
+		return -1;
+	}
+	int i = S->data[S->top--];
+	return i;
+}
+
+//初始化一个队列
+int Initqueue(Queue* Q) {
+	if (Q==NULL) {
+		printf("队列异常\n");
+		return -1;
+	}
+	Q->front = 0;
+	Q->rear = 0;
+	return 0;
+}
+
+//队列判空
+int Queueempty(Queue* Q) {
+	return Q->front == Q->rear;
+}
+
+//队列判满
+int Queuefull(Queue* Q) {
+	return Q->front == (Q->rear + 1) % 20;
+}
+
+//入队
+int Queuein(Queue* Q,int data) {
+	if (Queuefull(Q)) {
+		printf("队列已满\n");
+		return -1;
+	}
+	Q->data[Q->rear] = data;
+	Q->rear = (Q->rear + 1) % 20;
+	return 0;
+}
+
+//出队
+int Queueout(Queue* Q) {
+	if (Queueempty(Q)) {
+		printf("队列已空\n");
+		return -1;
+	}
+	Q->front = (Q->front + 1) % 20;
+	return 0;
+}
