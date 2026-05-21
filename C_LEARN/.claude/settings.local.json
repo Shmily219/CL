@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(dir *.c *.h)",
+      "Bash(gcc --version)",
+      "Bash(cmd.exe *)",
+      "Bash(\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\\\\Community\\\\VC\\\\Auxiliary\\\\Build\\\\vcvars64.bat\")",
+      "Bash(cl test.c def.c /Fe:test.exe)",
+      "Bash(./test.exe)"
+    ]
+  }
+}

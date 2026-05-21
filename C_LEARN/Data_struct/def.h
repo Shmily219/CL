@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include <stdbool.h>
+#define maxsize 20
 // 声明一个顺序表
 typedef struct {
 	int* p;
@@ -20,7 +22,7 @@ typedef struct{
 	int len;						//存储单链表的长度
 }LinkList;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //声明一个双链表节点
 typedef struct Dnode {
@@ -34,20 +36,25 @@ typedef struct{
 	int len;						//存储双链表长度
 }Dlinklist;
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //声明一个栈
 typedef struct {
-	int data[20];					//创建一个大小为20的栈空间
+	int data[maxsize];				//创建一个大小为20的栈空间
 	int top;						//创建一个指向栈顶的指针
 }Sqstack;
 
 //声明一个队列
 typedef struct {
-	int data[20];					//创建一个大小为20的队列空间
+	int data[maxsize];				//创建一个大小为20的队列空间
 	int front;						//头指针
 	int rear;						//尾指针
 }Queue;
 
 
-// 声明函数
-//void Initsq(Sqlist* L);
-//void Increasesq(Sqlist* L, int n);
+//声明一个双端队列
+typedef struct {
+	int data[maxsize];
+	int front;
+	int rear;
+}Tpqueue;

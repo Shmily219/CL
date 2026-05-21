@@ -3,6 +3,7 @@
 #include <stdio.h> //io功能库
 #include <stdlib.h>
 #include <time.h>
+#include "string.h"
 #include "def.h"
 
 
@@ -38,24 +39,24 @@ int main()
 	//printf("查找的第%d个数为%d\n",8,Findsqi(&L,8));
 
 	//printf("现在申请的最大空间为%d，已使用空间为%d\n", L.maxlen, L.len);
-	////for (int i = 0; i < L.len; i++) {
-	////	printf("L的第%d个元素为%d\n", i+1, L.p[i]);
-	////}
+	//for (int i = 0; i < L.len; i++) {
+	//	printf("L的第%d个元素为%d\n", i+1, L.p[i]);
+	//}
 	//free(L.p);
 
 
 	//单链表操作
-	LinkList L;			//声明
-	InitLinkList(&L);	//初始化
-	for (int i = 0; i < 10; i++) {
-		Yheadin(&L, rand() % 100 + 1);
-		Ytailin(&L, rand() % 100 + 1);
-		printlinklist(&L);
-	}//创建节点
-	Middlein(&L, rand() % 100 + 1,3);
-	printlinklist(&L);
-	Delectnode(&L, 21);
-	printlinklist(&L);
+	//LinkList L;			//声明
+	//InitLinkList(&L);	//初始化
+	//for (int i = 0; i < 10; i++) {
+	//	Yheadin(&L, rand() % 100 + 1);
+	//	Ytailin(&L, rand() % 100 + 1);
+	//	printlinklist(&L);
+	//}//创建节点
+	//Middlein(&L, rand() % 100 + 1,3);
+	//printlinklist(&L);
+	//Delectnode(&L, 21);
+	//printlinklist(&L);
 
 	return 0;
 }

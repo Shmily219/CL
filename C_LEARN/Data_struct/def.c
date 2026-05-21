@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "def.h"
 #include <stdbool.h>
+#define maxsize  20
 
 //初始化一个顺序表
 void Initsq(Sqlist *L) {
@@ -18,7 +19,7 @@ void Initsq(Sqlist *L) {
 
 //输出顺序表的内容
 void printsq(Sqlist* L) {
-	if (L == NULL) {										//检查顺序表是否初始化，是否合规
+	if (L == NULL || L->p == NULL) {
 		return;
 	}
 	if (L->len == 0) {
@@ -40,8 +41,8 @@ void printsq(Sqlist* L) {
 
 //扩展一个顺序表
 void Increasesq(Sqlist* L, int n) {	
-	if (L == NULL || n <= 0) {
-		printf("链表不规范或扩展数位不合理!\n");
+	if (L == NULL || L->p == NULL || n <= 0) {
+		printf("顺序表不规范或扩展量不合理!\n");
 		return;
 	}
 	//int* data = L->p;
@@ -58,16 +59,20 @@ void Increasesq(Sqlist* L, int n) {
 	L->p = new_data;										//将旧空间的指针指向新空间
 }
 
-//顺序表的插入，d->data是数据，l->location是位置
+//顺序表的插入，d 为数据，l 为 1-based 位置（1..len+1）
 bool Insertsq(Sqlist* L, int d, int l) {
-	if (l<0||l>(L->len)-1) {								//防御性排错
+	if (L == NULL || L->p == NULL) {
+		printf("顺序表未初始化\n");
+		return false;
+	}
+	if (l < 1 || l > L->len + 1) {
 		printf("位置不合法\n");
 		return false;
 	}
 	while (L->len >= L->maxlen) {
 		Increasesq(L, 5);
 	}
-	int move_num = (L->len) - l + 1;						//假设顺序表有len个数，插入到l处，则插入的下标为l-1，需要移动的个数是len-(l-1)=len-l+1
+	int move_num = L->len - (l - 1);						// 从下标 l-1 起向右移动 len-(l-1) 个元素
 	for (int i = L->len; i > L->len - move_num; i--) {
 		 L->p[i] = L->p[i-1];								//数据后移
 	}
@@ -76,14 +81,18 @@ bool Insertsq(Sqlist* L, int d, int l) {
 	return true;
 }
 
-//删除一个顺序表中的元素
+//删除一个顺序表中的元素（l 为 1-based，1..len）
 int Delectsq(Sqlist* L, int l) {
-	if (l<0 || l>(L->len) - 1) {
+	if (L == NULL || L->p == NULL) {
+		printf("顺序表未初始化\n");
+		return 1;
+	}
+	if (l < 1 || l > L->len) {
 		printf("位置不合法\n");
 		return 1;
 	}
 	int result = L->p[l-1];									//删除第l个元素，其下标为l-1
-	for (int i = l; i < L->len+1; i++) {					//删除第l个元素，则l-1个元素不动，需要移动的元素为len-(l-1) = len-l+1
+	for (int i = l; i < L->len; i++) {
 		L->p[i-1] = L->p[i];								//朝前赋值
 	}
 	L->len--;
@@ -92,28 +101,34 @@ int Delectsq(Sqlist* L, int l) {
 }
 
 //查找一个元素是否在顺序表中
-int Findsqn(Sqlist* L, int f) {								
-	for (int i = 0; i < L->len; i++) {						//遍历顺序表
+int Findsqn(Sqlist* L, int f) {
+	if (L == NULL || L->p == NULL) {
+		printf("顺序表未初始化\n");
+		return -1;
+	}
+	for (int i = 0; i < L->len; i++) {
 		if (L->p[i] == f) {
-			printf("已找到，在链表的第%d个位置\n", i + 1);
+			printf("已找到，在顺序表的第%d个位置\n", i + 1);
 			return i + 1;
 		}
-		if (i == L->len-1) {								//如果最后一个判断依旧匹配不上，则返回对应信心		
-			printf("未找到\n");
-			return -1;
-		}
 	}
+	printf("未找到\n");
+	return -1;
 }
 
-//按下标查找顺序表
+//按下标查找顺序表（i 为 1-based，1..len）
 int Findsqi(Sqlist* L, int i) {
+	if (L == NULL || L->p == NULL || i < 1 || i > L->len) {
+		printf("顺序表或下标不合法\n");
+		return 0;
+	}
 	return L->p[i - 1];
 }
 
 //创建新节点
 Node* CreateNode(int i) {
 	Node* nnode = malloc(sizeof(Node));						//分配新的节点		
-	if (nnode == NULL)return;
+	if (nnode == NULL) return NULL;
 	nnode->data = i;
 	nnode->next = NULL;
 	return nnode;
@@ -122,8 +137,7 @@ Node* CreateNode(int i) {
 //初始化一个单链表(带头节点)
 void InitLinkList(LinkList* L) {
 	if (L == NULL) return;									//判断指针是否为空
-	Node* cur = L->head;									//创建指向头节点的指针
-	L->head = malloc(sizeof(Node));							//顺序表链头创建节点实例
+	L->head = malloc(sizeof(Node));							//链头创建节点实例
 	if (L->head == NULL) {									//防御性
 		printf("内存分配失败\n");
 		return;
@@ -138,6 +152,7 @@ void InitLinkList(LinkList* L) {
 void printlinklist(LinkList *L) {
 	if (L == NULL || L->head == NULL) {						//防御
 		printf("空链表\n");
+		return;
 	}
 	Node* cur = L->head->next;								//cur是一个专门指向Node结构体的指针
 	while (cur != NULL) {									//cur为空时说明指向了最后一个节点的next指针，表明所有的链表已经遍历完毕
@@ -255,7 +270,6 @@ void InitDLinklist(Dlinklist* L) {
 	L->head->next = NULL;
 	L->head->prior = NULL;
 	L->len = 0;
-	return;
 }
 
 //双链表头插法
@@ -264,7 +278,6 @@ void Dheadin(Dlinklist* L, int data) {
 	Dnode* newnode = Creatednode(data);
 	if (newnode == NULL) {
 		printf("内存分配失败！\n");
-		return;
 	}
 	newnode->next = L->head->next;	//优先处理新节点
 	newnode->prior = L->head;
@@ -296,7 +309,7 @@ void Dmiddlein(Dlinklist* L, int data, int loc) {
 	if (loc<1 || loc>L->len + 1) {
 		printf("位置不合法！\n");
 		return;
-	};
+	}
 	Dnode* newnode = Creatednode(data);
 	if (newnode == NULL) {
 		printf("内存分配失败！\n");
@@ -353,7 +366,7 @@ int Stackin(Sqstack* S, int data) {
 		printf("链表异常\n");
 		return 1;
 	}
-	if (S->top == sizeof(S->data)/sizeof(S->data[0])) {
+	if (S->top >= (int)(sizeof(S->data) / sizeof(S->data[0])) - 1) {
 		printf("栈表已满无法插入\n");
 		return 1;
 	}
@@ -383,22 +396,28 @@ int Initqueue(Queue* Q) {
 		return -1;
 	}
 	Q->front = 0;
-	Q->rear = 0;
+	Q->rear = 0;							//rear在队列非空情况下，永远指向空结点，其前驱节点一定非空。
 	return 0;
 }
 
 //队列判空
 int Queueempty(Queue* Q) {
-	return Q->front == Q->rear;
+	if (Q == NULL) return 1;				//如果Q未定义，则定义为空
+	return Q->front == Q->rear;				//如果Q头指针和尾指针指向同一位置则为空，返回1；否则返回不空，返回0。
 }
 
 //队列判满
 int Queuefull(Queue* Q) {
-	return Q->front == (Q->rear + 1) % 20;
+	if (Q == NULL) return 0;				//如果Q未定义，则不可能满，返回0假
+	return Q->front == (Q->rear + 1) % 20;	//如果Q的尾指针下一个就是头指针，则定义为满，返回1；否则返回0假。
 }
 
 //入队
 int Queuein(Queue* Q,int data) {
+	if (Q == NULL) {
+		printf("队列异常\n");
+		return -1;
+	}
 	if (Queuefull(Q)) {
 		printf("队列已满\n");
 		return -1;
@@ -410,10 +429,87 @@ int Queuein(Queue* Q,int data) {
 
 //出队
 int Queueout(Queue* Q) {
+	if (Q == NULL) {
+		printf("队列异常\n");
+		return -1;
+	}
 	if (Queueempty(Q)) {
 		printf("队列已空\n");
 		return -1;
 	}
+	int v = Q->data[Q->front];
 	Q->front = (Q->front + 1) % 20;
+	return v;
+}
+
+
+//初始化一个双端队列
+int InittpQueue(Tpqueue* Q) {
+	if (Q == NULL) {
+		printf("双端队列异常!\n");
+		return 1;
+	}
+	Q->front = 0;
+	Q->rear = 0;
 	return 0;
+}
+
+//从头添加双端队列
+int ahQueue(Tpqueue* Q, int data) {
+	if (Q == NULL) {
+		printf("队列未定义\n");
+		return 1;
+	}
+	if (Queuefull(Q)) {
+		printf("队列已满无法添加\n");
+		return 1;
+	}
+	Q->front = (Q->front +19) % maxsize;
+	Q->data[Q->front] = data;
+	return 0;
+}
+
+//从尾添加双端队列
+int atQueue(Tpqueue* Q,int data){
+	if (Q == NULL) {
+		printf("队列未定义\n");
+		return 1;
+	}
+	if (Queuefull(Q)) {
+		printf("队列已满无法添加\n");
+		return 1;
+	}
+	Q->data[Q->rear] = data;
+	Q->rear = (Q->rear + 1) % maxsize;
+	return 0;
+}
+
+//从头出队
+int phQueue(Tpqueue* Q) {
+	if (Q == NULL) {
+		printf("队列未定义\n");
+		return -1;
+	}
+	if (Queueempty(Q)) {
+		printf("空队列无法出队\n");
+		return -1;
+	}
+	int value = Q->data[Q->front];
+	Q->front = (Q->front + 1) % maxsize;
+	return value;
+}
+
+//从尾出队
+int prQueue(Tpqueue* Q) {
+	if (Q == NULL) {
+		printf("队列未定义\n");
+		return -1;
+	}
+	if (Queueempty(Q)) {
+		printf("空队列无法出队\n");
+		return -1;
+	}
+	int value = Q->data[Q->rear - 1];
+	Q->rear = (Q->rear + 19) % 20;
+	return value;
 }

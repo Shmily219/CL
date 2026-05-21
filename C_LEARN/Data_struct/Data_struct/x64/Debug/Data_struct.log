@@ -1,4 +1,10 @@
-﻿  test.c
+﻿  def.c
+  test.c
+D:\Code_Learn\C_LEARN\Data_struct\def.c(465,16): warning C4133: “函数”: 从“Tpqueue *”到“Queue *”的类型不兼容
+  正在生成代码...
+D:\Code_Learn\C_LEARN\Data_struct\def.c(480,16): warning C4133: “函数”: 从“Tpqueue *”到“Queue *”的类型不兼容
+D:\Code_Learn\C_LEARN\Data_struct\def.c(495,17): warning C4133: “函数”: 从“Tpqueue *”到“Queue *”的类型不兼容
+D:\Code_Learn\C_LEARN\Data_struct\def.c(510,17): warning C4133: “函数”: 从“Tpqueue *”到“Queue *”的类型不兼容
 D:\Code_Learn\C_LEARN\Data_struct\test.c(11,8): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
 D:\Code_Learn\C_LEARN\Data_struct\test.c(49,2): warning C4013: “InitLinkList”未定义；假设外部返回 int
 D:\Code_Learn\C_LEARN\Data_struct\test.c(51,3): warning C4013: “Yheadin”未定义；假设外部返回 int
