@@ -27,7 +27,7 @@ int Assignstr(Str* S, const char* C) {						//给字符串传入一个全新的�
 		}
 		free(S->ch);										//这里不管ch是不是NULL，都主动把该指针置空
 		S->ch = temp;										//重新给S->ch分配空间
-		S->maxlen = n+1;									//加一是因为字符串结尾是\0
+		S->maxlen = 2*n+1;									//加一是因为字符串结尾是\0
 	}
 	strcpy(S->ch, C);										//将C的内容传入S->ch
 	S->len = n;
@@ -35,8 +35,31 @@ int Assignstr(Str* S, const char* C) {						//给字符串传入一个全新的�
 }
 
 int Extendstr(Str* S, const char* C) {
-
-
-
+	if (S == NULL || C == NULL) {						//检查参数是否规范
+		printf("传参异常\n");
+		return 0;
+	}
+	int n = strlen(C);									//记录待接入字符串的长度
+	if (!n) return 0;									
+	if (n + S->len >= S->maxlen||S->ch == NULL) {		//如果两个字符串的长度和超出了maxlen，则扩容。同时为了避免另一分支传入空指针，故再此处理空指针情况
+		char* temp = malloc(n + S->len + 1);			//创建新空间，准备写入
+		if (temp == NULL) {								//防御
+			printf("内存分配失败\n");			
+			return 0;
+		}
+		if (S->ch == NULL) {							//处理空指针
+			temp[0] = '\0';								//将temp设置为空字符串，随后的赋值会将该\0覆盖掉
+		}else {	
+			memcpy(temp, S->ch,S->len);					//不是空指针，直接把旧空间数据迁移
+		}
+		memcpy(temp+S->len, C, n+1);					//旧数据处理完毕，这里把待接入的字符串进行拼接，要留一个空间给\0
+		S->maxlen = S->len + 1 + n;						//重新设置最大的容量。可以根据情况调整扩容大小，这里刚好扩容到len
+		free(S->ch);
+		S->ch = temp;
+	}
+	else {
+		memcpy(S->ch + S->len, C, n + 1);				//直接拼接
+	}
+	S->len += n;										//更新len
 	return 1;
 }
