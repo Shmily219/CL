@@ -13,6 +13,8 @@ int Initstr(Str* S) {
 	return 1;
 }
 
+
+//赋值给字符串
 int Assignstr(Str* S, const char* C) {						//给字符串传入一个全新的值
 	if (S == NULL || C == NULL) {
 		printf("字符串未定义或传入串参数异常\n");
@@ -34,6 +36,7 @@ int Assignstr(Str* S, const char* C) {						//给字符串传入一个全新的�
 	return 1;
 }
 
+//拼接字符串
 int Extendstr(Str* S, const char* C) {
 	if (S == NULL || C == NULL) {						//检查参数是否规范
 		printf("传参异常\n");
@@ -62,4 +65,24 @@ int Extendstr(Str* S, const char* C) {
 	}
 	S->len += n;										//更新len
 	return 1;
+}
+
+//比较字符串
+int Comparestr(Str* a, Str* b) {
+	if (!a || !b || !a->ch || !b->ch) return -2;
+	int i = 0;
+	while (a->ch[i] != '\0' && b->ch[i] != '\0') {
+		if (a->ch[i] == b->ch[i]) {
+			i++;
+		}
+		if (a->ch[i] > b->ch[i]) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	if (a->ch[i] == '\0' && b->ch[i] == '\0') return 0;
+	if (a->ch[i] == '\0') return -1;
+	if (b->ch[i] == '\0') return 1;
 }
