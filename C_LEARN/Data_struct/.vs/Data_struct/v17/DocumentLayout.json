@@ -43,8 +43,7 @@
               "ViewState": "AgIAANgBAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-17T11:06:48.54Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "def.h",
               "ViewState": "AgIAADsAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-17T11:06:47.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-17T11:06:47.815Z"
             },
             {
               "$type": "Document",
@@ -71,7 +69,7 @@
               "RelativeDocumentMoniker": "string.c",
               "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\string.c",
               "RelativeToolTip": "string.c",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAcwFMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAqwEkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-17T08:35:27.846Z",
               "EditorCaption": ""
@@ -86,8 +84,7 @@
               "RelativeToolTip": "string.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-17T08:31:42.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-17T08:31:42.433Z"
             },
             {
               "$type": "Document",

@@ -67,7 +67,7 @@ int Extendstr(Str* S, const char* C) {
 	return 1;
 }
 
-//比较字符串
+//比较字符串，返回1代表大于，返回0代表等于，返回-1代表小于，返回-2代表异常
 int Comparestr(Str* a, Str* b) {
 	if (!a || !b || !a->ch || !b->ch) return -2;
 	int i = 0;
@@ -85,4 +85,36 @@ int Comparestr(Str* a, Str* b) {
 	if (a->ch[i] == '\0' && b->ch[i] == '\0') return 0;
 	if (a->ch[i] == '\0') return -1;
 	if (b->ch[i] == '\0') return 1;
+}
+
+//截取字符串，从b位置到c位置
+char* Capturestr(Str* a, int b,int c) {
+	if (b<1 || c>a->len || b > c|| a == NULL||a->ch == NULL) {
+		printf("参数不合法！\n");
+		return NULL;
+	}
+	char* t = malloc(c - b + 2);
+	if (t == NULL) {
+		printf("内存分配失败\n");
+		return NULL;
+	}
+	memcpy(t, a->ch + (b - 1), c - b + 1);
+	t[c - b + 1] = '\0';
+	return t;
+}
+
+//返回一个字符串的最大的头字串
+char* Returnltstr(Str* a) {
+	if (a == NULL) {
+		printf("传参异常\n");
+		return NULL;
+	}
+	char* b = malloc(a->len + 1);
+	int maxlen = 0;
+	for (int i = 0; i < a->len; i++) {
+		char* head = Capturestr(a, 1, i + 1);
+		char* tail = Capturestr(a, a->len - i, a->len);
+		if (strcmp(head, tail) == 0) maxlen = i + 1;
+	}
+	return Capturestr(a, 1, maxlen);
 }
