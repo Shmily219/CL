@@ -24,12 +24,24 @@
     <ClCompile Include="string.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="tree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="map.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="def.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="string.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

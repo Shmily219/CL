@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\Code_Learn\\C_LEARN\\Data_struct\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:tree.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\string.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:string.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:tree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\def.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -21,6 +33,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\def.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:def.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{005713DE-80DE-4FC2-A77F-E99AF5EC7930}|Data_struct.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,16 +50,68 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "def.c",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\def.c",
               "RelativeDocumentMoniker": "def.c",
               "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\def.c",
               "RelativeToolTip": "def.c",
-              "ViewState": "AgIAANgBAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADgBAAAAAAAAAAAAAEkBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-17T11:06:48.54Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "map.c",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\map.c",
+              "RelativeDocumentMoniker": "map.c",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\map.c",
+              "RelativeToolTip": "map.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-05-24T09:48:24.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "map.h",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\map.h",
+              "RelativeDocumentMoniker": "map.h",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\map.h",
+              "RelativeToolTip": "map.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-24T09:48:13.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "tree.c",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.c",
+              "RelativeDocumentMoniker": "tree.c",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.c",
+              "RelativeToolTip": "tree.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-05-24T09:48:01.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "tree.h",
+              "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.h",
+              "RelativeDocumentMoniker": "tree.h",
+              "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\tree.h",
+              "RelativeToolTip": "tree.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-24T09:47:45.507Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -51,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "def.h",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\def.h",
               "RelativeDocumentMoniker": "def.h",
@@ -63,20 +131,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "string.c",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\string.c",
               "RelativeDocumentMoniker": "string.c",
               "ToolTip": "D:\\Code_Learn\\C_LEARN\\Data_struct\\string.c",
               "RelativeToolTip": "string.c",
-              "ViewState": "AgIAADAAAAAAAAAAAAAqwEkAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-05-17T08:35:27.846Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "string.h",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\string.h",
               "RelativeDocumentMoniker": "string.h",
@@ -84,11 +152,12 @@
               "RelativeToolTip": "string.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-17T08:31:42.433Z"
+              "WhenOpened": "2026-05-17T08:31:42.433Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "test.c",
               "DocumentMoniker": "D:\\Code_Learn\\C_LEARN\\Data_struct\\test.c",
               "RelativeDocumentMoniker": "test.c",
@@ -96,8 +165,7 @@
               "RelativeToolTip": "test.c",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-05-05T07:32:01.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T07:32:01.788Z"
             }
           ]
         }
