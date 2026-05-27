@@ -5,6 +5,7 @@
 #include <time.h>
 #include "string.h"
 #include "def.h"
+#include "tree.c"
 
 
 int main()
@@ -57,6 +58,14 @@ int main()
 	//printlinklist(&L);
 	//Delectnode(&L, 21);
 	//printlinklist(&L);
+
+	//树的操作
+	Treenode* root = Createtreenode(1);				//			1
+	root->lc = Createtreenode(3);					//		 3	  2
+	root->rc = Createtreenode(2);					//		5 4		6
+	root->lc->lc = Createtreenode(5);
+	root->lc->rc = Createtreenode(4);
+	root->rc->rc = Createtreenode(6);
 
 	return 0;
 }
